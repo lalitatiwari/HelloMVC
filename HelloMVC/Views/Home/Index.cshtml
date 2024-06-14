@@ -1,4 +1,7 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env
+@using Microsoft.AspNetCore.Hosting
+@using Microsoft.Extensions.Hosting
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +9,20 @@
     <h1 class="display-4">Welcome to Home Page</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@if (env.IsDevelopment)
+{
+    
+<p>Environmrnt =Dev</p>
+}
+
+@if (env.IsStaging)
+{
+
+    <p>Environmrnt =Staging</p>
+}
+@if (env.IsProduction)
+{
+
+    <p>Environmrnt =Production</p>
+}
